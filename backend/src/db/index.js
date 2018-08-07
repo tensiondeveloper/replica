@@ -1,6 +1,6 @@
 const{
     MONGODB_URI:MONGODB_URI
-} = process.nav;
+} = process.env;
 
 const mongo = require('mongoose');
 
@@ -9,7 +9,7 @@ module.exports = (function(){
 
     return{
         connect(){
-            mongo.createConnection(mongodbURI,{
+            mongo.createConnection(MONGODB_URI,{
                 useNewUrlParser:true
             }).then(
                 () =>{
