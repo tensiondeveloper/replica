@@ -2,15 +2,15 @@ require('dotenv').config();
 //env 설정파일 
 const {
     PORT:port,
-    LOCAL_POSITION : local_position,
-    MONGODB_URI: mongodbURI
+    LOCAL_POSITION : local_position
+  
 } = process.env;
 
 const Koa = require('koa');
 const Router = require('koa-router');
 //mongodb 연결
-const db = require('./db');
-db.connect();
+// const db = require('./db');
+//  db.connect();
 
 
 const app = new Koa();
@@ -20,13 +20,22 @@ router.get('/', (ctx, next) => {
     ctx.body = 'src/index.js';
 });
 
-router.use('/api', api.routes()); // api 라우트를 /api 경로 하위 라우트로 설정
-
+router.post('/', (ctx, next) => {
+    ctx.body = 'post -';
+});
+    
+    
+    router.use('/api', api.routes()); // api 라우트를 /api 경로 하위 라우트로 설정
+    
 app.use(router.routes()).use(router.allowedMethods());
 
 
 
+
 app.listen(port, () =>{
-console.log(`asdf ${port} ${local_position}`)
+    console.log(`asdf ${port} ${local_position}`)
 
 })
+
+
+
