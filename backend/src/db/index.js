@@ -1,15 +1,17 @@
 const{
     MONGODB_URI:MONGODB_URI
-} = process.nav;
+} = process.env;
 
 const mongo = require('mongoose');
-
+console.log(MONGODB_URI)
 module.exports = (function(){
     mongo.Promise = global.Promise;
-
     return{
+        abc(){
+            console.log('들어오나 확인')  
+         },
         connect(){
-            mongo.createConnection(mongodbURI,{
+            mongo.createConnection(MONGODB_URI,{
                 useNewUrlParser:true
             }).then(
                 () =>{
@@ -17,7 +19,9 @@ module.exports = (function(){
                 }
             ).catch(e=>{
                 console.log("MONGODB ERROR : "+ e)
-            })  
+            })   
         }
     }
-})
+})()
+
+

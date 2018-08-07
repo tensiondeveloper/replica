@@ -2,15 +2,15 @@ require('dotenv').config();
 //env 설정파일 
 const {
     PORT:port,
-    LOCAL_POSITION : local_position,
-    MONGODB_URI: mongodbURI
+    LOCAL_POSITION : local_position
+  
 } = process.env;
 
 const Koa = require('koa');
 const Router = require('koa-router');
 //mongodb 연결
 const db = require('./db');
-db.connect();
+ db.connect();
 
 
 const app = new Koa();
