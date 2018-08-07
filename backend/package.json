@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "replica",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "koa": "^2.5.2",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "nodemon": "^1.18.3"
+  },
+  "scripts": {
+    "start:dev": "nodemon --watch src/ src/index.js"
+  }
+}
