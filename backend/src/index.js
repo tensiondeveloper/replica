@@ -10,12 +10,7 @@ const Koa = require('koa');
 const Router = require('koa-router');
 //mongodb 연결
  const db = require('./db');
-<<<<<<< HEAD
-//  db.connect();
- db.abc();
-=======
   db.connect();
->>>>>>> 2e38b0c7a571515c834b19d29dad606cf4bb20e6
 
 
 const app = new Koa();
