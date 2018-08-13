@@ -4,9 +4,8 @@ const { Schema } = mongo;
 
 const rate =   new Schema({
     id:String,
-    pwd : String,
-    name :String
+    title : String
 
 })
 
-module.exports = mongo.model('rate',rate);
+module.exports = mongo.model('articles',rate);
