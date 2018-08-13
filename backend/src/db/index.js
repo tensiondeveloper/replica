@@ -3,6 +3,7 @@ const{
 } = process.env;
 
 const mongo = require('mongoose');
+const article = require('../db/models/SchemaAdd')
 console.log(MONGODB_URI)
 module.exports = (function(){
     mongo.Promise = global.Promise;
@@ -17,6 +18,7 @@ module.exports = (function(){
             }).then(
                 () =>{
                     console.log("MONGODB CONNECT!")
+                    
                 }
             ).catch(e=>{
                 console.log("MONGODB ERROR : "+ e)
