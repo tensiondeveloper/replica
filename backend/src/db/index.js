@@ -10,6 +10,7 @@ module.exports = (function(){
         abc(){
             console.log('들어오나 확인')  
          },
+         
         connect(){
             mongo.createConnection(MONGODB_URI,{
                 useNewUrlParser:true
@@ -23,5 +24,4 @@ module.exports = (function(){
         }
     }
 })()
-
 

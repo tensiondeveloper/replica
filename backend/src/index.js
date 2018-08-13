@@ -9,8 +9,9 @@ const {
 const Koa = require('koa');
 const Router = require('koa-router');
 //mongodb 연결
-// const db = require('./db');
+ const db = require('./db');
 //  db.connect();
+ db.abc();
 
 
 const app = new Koa();
@@ -23,9 +24,10 @@ router.get('/', (ctx, next) => {
 router.post('/', (ctx, next) => {
     ctx.body = 'post -';
 });
-    
-    
-    router.use('/api', api.routes()); // api 라우트를 /api 경로 하위 라우트로 설정
+
+
+
+router.use('/api', api.routes()); // api 라우트를 /api 경로 하위 라우트로 설정
     
 app.use(router.routes()).use(router.allowedMethods());
 
