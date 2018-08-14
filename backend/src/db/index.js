@@ -2,18 +2,17 @@ const{
     MONGODB_URI:MONGODB_URI
 } = process.env;
 
-const mongo = require('mongoose');
-const sample = require('../db/models/sample')
+const mongoose = require('mongoose');
+
 console.log(MONGODB_URI)
+
+
+
 module.exports = (function(){
-    mongo.Promise = global.Promise;
+    mongoose.Promise = global.Promise;
     return{
-        abc(){
-            console.log('들어오나 확인')  
-         },
-         
         connect(){
-            mongo.createConnection(MONGODB_URI,{
+            mongoose.createConnection(MONGODB_URI,{
                 useNewUrlParser:true
             }).then(
                 () =>{
@@ -23,6 +22,6 @@ module.exports = (function(){
                 console.log("MONGODB ERROR : "+ e)
             })   
         }
-    }
-})()
+    };
+})();
 

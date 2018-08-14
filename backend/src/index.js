@@ -8,15 +8,11 @@ const {
 
 const Koa = require('koa');
 const Router = require('koa-router');
-<<<<<<< HEAD
-const bodyParser  = require('body-parser');
-=======
 const bodyparser = require('koa-bodyparser');
-console.log(bodyparser)
->>>>>>> d308810ea7928cc789fa0c105fc43161b4962422
+
 //mongodb 연결
  const db = require('./db');
-  db.connect();
+db.connect();
 
 
 
