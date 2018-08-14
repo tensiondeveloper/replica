@@ -1,13 +1,23 @@
 const router = require('koa-router');
 const api = new router();
-const rate = require('../db/models/SchemaAdd')
+const sample = require('../db/models/sample')
+const db = require('../db');
+
+
+
 api.get('/:dbname', (ctx, next,req) => {
 
 
+    console.log("1")
     
-    ctx.body = 'GET ' + ctx.request.path +"\n nameParam : "+ ctx.params.dbname;
-
-    
+    sample.find(function(err, samples){
+        console.log("2")
+        if(err) return res.status(500).send({error: 'database failure'});
+        
+         console.log(samples)
+         ctx.body = 'GET ' + ctx.request.path +"\n nameParam : "+ ctx.params.dbname;
+     })()
+     ctx.body = 'GET ' + ctx.request.path +"\n nameParam : "+ ctx.params.dbname;
 });
 
 api.post('/:dbname',  (ctx, next,req) => {

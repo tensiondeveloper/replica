@@ -8,14 +8,24 @@ const {
 
 const Koa = require('koa');
 const Router = require('koa-router');
+const bodyParser  = require('body-parser');
 //mongodb 연결
  const db = require('./db');
   db.connect();
 
 
+
 const app = new Koa();
 const router = new Router();
 const api = require('./api');
+
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+
+
+
+
+
 router.get('/', (ctx, next) => {
     ctx.body = 'src/index.js';
 });
