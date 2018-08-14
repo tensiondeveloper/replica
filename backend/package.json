@@ -5,9 +5,10 @@
   "author": "replica",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
+    "joi": "^13.6.0",
     "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mongoose": "^5.2.7"
   },
