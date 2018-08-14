@@ -8,7 +8,12 @@ const {
 
 const Koa = require('koa');
 const Router = require('koa-router');
+<<<<<<< HEAD
 const bodyParser  = require('body-parser');
+=======
+const bodyparser = require('koa-bodyparser');
+console.log(bodyparser)
+>>>>>>> d308810ea7928cc789fa0c105fc43161b4962422
 //mongodb 연결
  const db = require('./db');
   db.connect();
@@ -37,7 +42,8 @@ router.post('/', (ctx, next) => {
 
 
 router.use('/api', api.routes()); // api 라우트를 /api 경로 하위 라우트로 설정
-    
+
+app.use(bodyparser());
 app.use(router.routes()).use(router.allowedMethods());
 
 

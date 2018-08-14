@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 const router = require('koa-router');
 const api = new router();
 const sample = require('../db/models/sample')
 const db = require('../db');
+=======
+const Router = require('koa-router');
+const api = new Router();
+const auth = require('./auth');
+>>>>>>> d308810ea7928cc789fa0c105fc43161b4962422
 
+api.use('/auth',auth.routes());
 
+<<<<<<< HEAD
 
 api.get('/:dbname', (ctx, next,req) => {
 
@@ -42,14 +50,10 @@ api.post('/:dbname',  (ctx, next,req) => {
 api.delete('/:dbname', (ctx, next,req) => {
     ctx.body = 'delete ' + ctx.request.path +"\n nameParam : "+ ctx.params.dbname;
 
+=======
+api.get('/', (ctx) =>{
+    ctx.body = '/Api Router IN'
+>>>>>>> d308810ea7928cc789fa0c105fc43161b4962422
 });
-api.put('/:dbname', (ctx, next,req) => {
-    ctx.body = 'put ' + ctx.request.path +"\n nameParam : "+ ctx.params.dbname;
-
-
-
-
-});
-
 
 module.exports = api;
