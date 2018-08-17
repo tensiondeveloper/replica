@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
-const { Schema } = mongoose;
+const  Schema  = mongoose.Schema;
 const { 
     PASSWORD_HASH_KEY : hashkey
 } = process.env;
@@ -37,19 +37,29 @@ const User = new Schema({
 
 
 User.statics.findByEmail = function(email){
+ 
     return this.findOne({email}).exec();
+}
+User.statics.findBydisplayName = function(displayName){
+    return this.findOne({displayName}).exec();
 }
 
 User.statics.localRegister = function({displayName , email,password}){
-    console.log('1_2')
-    console.log(this)
+    
+
     const user = new this({
         displayName,
         email,
         password : hash(password)
     })
-    console.log('check' +  user)
+  
     return user.save();
 };
+User.static.memberShow = function(){
+    return User.find();
+
+   
+}
+
 
 module.exports = mongoose.model('User',User);
