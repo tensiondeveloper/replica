@@ -62,4 +62,10 @@ User.static.memberShow = function(){
 }
 
 
+User.methods.validatePassword = function(password){
+    const hash_password = hash(password);
+    return this.password === hash_password;
+}
+
+
 module.exports = mongoose.model('User',User);

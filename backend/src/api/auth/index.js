@@ -22,9 +22,12 @@ const User = require('../../db/models/Users')
 
 
 
-
+//회원가입 url
 auth.post('/register',authCtrl.register);
+
+//모든회원을 보여주는 url
 auth.get('/showUser',authCtrl.showUser);
+auth.post('/locallogin',authCtrl.localLogin);
 
 
 
