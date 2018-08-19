@@ -96,9 +96,11 @@ exports.localLogin = async (ctx) =>{
         ctx.body = user;
         console.log('여긴들어와')
         const accessToken = await token.generateToken({
+            user : {
             _id: user._id,
             displayName : user.displayName
-        },'user');
+        }
+        },'User');
 
         ctx.cookies.set('access_token',accessToken,{
             httpOnly : true,

@@ -26,7 +26,9 @@ const User = require('../../db/models/Users')
 auth.post('/register',authCtrl.register);
 
 //모든회원을 보여주는 url
-auth.get('/showUser',authCtrl.showUser);
+auth.get('/showuser',authCtrl.showUser);
+
+//로그인 url
 auth.post('/locallogin',authCtrl.localLogin);
 
 
