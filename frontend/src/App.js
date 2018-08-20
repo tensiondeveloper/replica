@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
-import style from '../src/test.scss'
+import style from '../src/styles/main.scss'
 console.log('test');
 console.log(style)
 class App extends Component {
